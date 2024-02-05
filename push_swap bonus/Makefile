@@ -71,5 +71,8 @@ re: 				fclean all
 bonus:
 					@make -C src_bonus
 					@make clean -C src_bonus
-					
-.PHONY: 			start all clean fclean re bonus
+
+rebonus:				
+					@make re -C src_bonus
+
+.PHONY: 			start all clean fclean re bonus rebonus
