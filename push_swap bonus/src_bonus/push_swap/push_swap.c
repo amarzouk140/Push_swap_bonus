@@ -30,7 +30,7 @@ void	ft_check(char **av)
 		}
 		if (!av[j][y])
 		{
-			printf("Error\n");
+			write(2,"Error\n",6);
 			exit(1);
 		}
 		j++;
