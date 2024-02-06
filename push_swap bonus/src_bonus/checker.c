@@ -18,7 +18,7 @@ void	free_checker(t_stack_node **a, t_stack_node **b, char **line)
 	if (*b)
 		free_stack(b);
 	free(*line);
-	ft_printf("Error\n");
+	write(2,"Error\n",6);
 	exit(1);
 }
 
