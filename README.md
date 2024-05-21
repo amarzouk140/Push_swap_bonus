@@ -25,13 +25,12 @@ The Push Swap project is designed to help students understand and implement sort
   - Efficiently sorts using the least number of operations.
 
 - **Bonus Part:**
-  - Visualizes the sorting process.
-  - Provides additional commands for enhanced manipulation and testing.
+  - Create your own checker.
 
 ## Requirements
 
 - GNU Make
-- GCC
+- CC
 
 ## Installation
 
