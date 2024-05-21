@@ -51,4 +51,13 @@ This will create the `push_swap` and `checker` executables.
 
 ## Usage
 
+### Sorting
 
+To sort a list of integers, run:
+
+```sh
+./push_swap <list_of_integers>
+```
+
+#### example:
+./push_swap 3 2 5 1 4
