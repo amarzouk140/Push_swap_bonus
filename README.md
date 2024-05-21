@@ -51,33 +51,4 @@ This will create the `push_swap` and `checker` executables.
 
 ## Usage
 
-### Sorting
 
-To sort a list of integers, run:
-
-```sh
-./push_swap <list_of_integers>
-Example:
-
-sh
-نسخ الكود
-./push_swap 3 2 5 1 4
-Bonus - Checker
-The checker program reads operations and checks if they sort the stack correctly.
-
-Provide a list of integers:
-
-sh
-نسخ الكود
-./checker <list_of_integers>
-Enter operations, one per line (e.g., sa, pb, ra, etc.). Press Ctrl+D to end input.
-
-Example:
-
-sh
-نسخ الكود
-./checker 3 2 5 1 4
-Input:
-
-sh
-نسخ الكود
