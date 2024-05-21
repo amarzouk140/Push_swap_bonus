@@ -60,4 +60,54 @@ To sort a list of integers, run:
 ```
 
 #### example:
+
+```sh
 ./push_swap 3 2 5 1 4
+```
+
+### Bonus - Checker
+
+The checker program reads operations and checks if they sort the stack correctly.
+
+#### Provide a list of integers:
+
+```sh
+./checker <list_of_integers>
+```
+
+#### example:
+
+```sh
+./checker 3 2 5 1 4
+```
+#### Input:
+pb
+pb
+sa
+pa
+pa
+
+## Commands
+### sa: swap the first 2 elements at the top of stack a.
+### sb: swap the first 2 elements at the top of stack b.
+### ss: sa and sb at the same time.
+### pa: take the first element at the top of b and put it at the top of a.
+### pb: take the first element at the top of a and put it at the top of b.
+### ra: shift up all elements of stack a by 1.
+### rb: shift up all elements of stack b by 1.
+### rr: ra and rb at the same time.
+### rra: shift down all elements of stack a by 1.
+### rrb: shift down all elements of stack b by 1.
+### rrr: rra and rrb at the same time.
+
+## Project Structure
+
+### src/: Source code files.
+### include/: Header files.
+### Makefile: Makefile to compile the project.
+### libft/: Directory containing the Libft library used in the project.
+
+## Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvement, feel free to open an issue or create a pull request.
+
+
