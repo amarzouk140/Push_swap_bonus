@@ -81,11 +81,11 @@ The checker program reads operations and checks if they sort the stack correctly
 ./checker 3 2 5 1 4
 ```
 #### Input:
-pb
-pb
-sa
-pa
-pa
+##### pb
+##### pb
+##### sa
+##### pa
+##### pa
 
 ## Commands
 sa: swap the first 2 elements at the top of stack a.
