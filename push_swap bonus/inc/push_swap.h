@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 23:10:50 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/01/11 09:31:58 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/08/20 15:07:32 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../my_library/inc/ft_printf.h"
 # include "../my_library/inc/libft.h"
+# include "../my_library/inc/get_next_line.h"
 # include <limits.h>
 # include <stdbool.h>
 # include <stdlib.h>
@@ -49,6 +50,11 @@ t_stack_node			*find_last(t_stack_node *stack);
 int						stack_sorted(t_stack_node *stack);
 t_stack_node			*find_min(t_stack_node *stack);
 t_stack_node			*find_max(t_stack_node *stack);
+void					swap(t_stack_node **head);
+void					push(t_stack_node **dst, t_stack_node **src);
+void					rotate(t_stack_node **stack);
+void					rev_rotate(t_stack_node **stack);
+void					ft_check(char **av);
 void					sa(t_stack_node **a, int print);
 void					sb(t_stack_node **b, int print);
 void					ss(t_stack_node **a, t_stack_node **b, int print);

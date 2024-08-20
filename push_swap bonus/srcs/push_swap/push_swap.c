@@ -3,51 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:07:55 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/01/22 15:35:16 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/08/20 15:02:22 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
-
-static void	ft_check(char **av)
-{
-	int	j;
-	int	y;
-
-	j = 1;
-	y = 0;
-	while (av[j])
-	{
-		y = 0;
-		while (av[j][y])
-		{
-			if (av[j][y] != 32 && av[j][y] != '\t')
-				break ;
-			y++;
-		}
-		if (!av[j][y])
-		{
-			write(2,"Error\n",6);
-			exit(1);
-		}
-		j++;
-	}
-}
-
-void	free_split(char **av)
-{
-	int	i;
-
-	i = 0;
-	if (!av || !*av)
-		return ;
-	while (av[i])
-		free(av[i++]);
-	free(av);
-}
 
 int	main(int ac, char **av)
 {

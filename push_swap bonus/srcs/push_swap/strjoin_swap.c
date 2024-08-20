@@ -3,14 +3,51 @@
 /*                                                        :::      ::::::::   */
 /*   strjoin_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:09:49 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/01/11 10:26:03 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/08/20 15:01:39 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
+
+void	ft_check(char **av)
+{
+	int	j;
+	int	y;
+
+	j = 1;
+	y = 0;
+	while (av[j])
+	{
+		y = 0;
+		while (av[j][y])
+		{
+			if (av[j][y] != 32 && av[j][y] != '\t')
+				break ;
+			y++;
+		}
+		if (!av[j][y])
+		{
+			write(2,"Error\n",6);
+			exit(1);
+		}
+		j++;
+	}
+}
+
+void	free_split(char **av)
+{
+	int	i;
+
+	i = 0;
+	if (!av || !*av)
+		return ;
+	while (av[i])
+		free(av[i++]);
+	free(av);
+}
 
 char	**ft_join_args(char **av)
 {

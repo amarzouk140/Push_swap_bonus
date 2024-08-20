@@ -3,14 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: codespace <codespace@student.42.fr>        +#+  +:+       +#+         #
+#    By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/03 23:37:35 by ayman_marzo       #+#    #+#              #
-#    Updated: 2024/02/05 19:55:18 by codespace        ###   ########.fr        #
+#    Updated: 2024/08/20 15:10:55 by ayman_marzo      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME				= push_swap
+BONUS_NAME			= checker
 
 LIBFT				= ./my_library/libft.a
 INC					= inc/
@@ -31,48 +32,59 @@ COMMANDS_DIR		=	$(SRC_DIR)commands/push.c \
 PUSH_SWAP_DIR		=	$(SRC_DIR)push_swap/handle_errors.c \
 						$(SRC_DIR)push_swap/init_a_to_b.c \
 						$(SRC_DIR)push_swap/init_b_to_a.c \
-						$(SRC_DIR)push_swap/push_swap.c \
 						$(SRC_DIR)push_swap/split.c \
 						$(SRC_DIR)push_swap/stack_init.c \
 						$(SRC_DIR)push_swap/stack_utils.c \
-						$(SRC_DIR)push_swap/strjoin_swap.c 
+						$(SRC_DIR)push_swap/strjoin_swap.c
 
-SRCS 				= $(COMMANDS_DIR) $(PUSH_SWAP_DIR)
+PUSH_SWAP_SRCS		= $(COMMANDS_DIR) $(PUSH_SWAP_DIR) $(SRC_DIR)push_swap/push_swap.c
+BONUS_SRCS			= $(COMMANDS_DIR) $(PUSH_SWAP_DIR) $(SRC_DIR)checker.c
 
-OBJ 				= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
+PUSH_SWAP_OBJS		= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(PUSH_SWAP_SRCS))
+BONUS_OBJS			= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(BONUS_SRCS))
+
+# Colors
+GREEN				= \033[0;32m
+YELLOW				= \033[1;33m
+BLUE				= \033[0;34m
+RED					= \033[0;31m
+NC					= \033[0m # No Color
 
 start:				
+					@echo "${BLUE}🔨 Starting build...${NC}"
 					@make all
 
 $(LIBFT):
+					@echo "${YELLOW}📦 Building libft...${NC}"
 					@make -C ./my_library
 
 all: 				$(NAME)
 
-$(NAME): 			$(OBJ) $(LIBFT)
-					@$(CC) $(CFLAGS) $(INC) $(OBJ) $(LIBFT) -o $(NAME)
+$(NAME): 			$(PUSH_SWAP_OBJS) $(LIBFT)
+					@echo "${GREEN}🚀 Compiling and linking $(NAME)...${NC}"
+					@$(CC) $(CFLAGS) $(INC) $(PUSH_SWAP_OBJS) $(LIBFT) -o $(NAME)
+
+$(BONUS_NAME): 		$(BONUS_OBJS) $(LIBFT)
+					@echo "${GREEN}🚀 Compiling and linking $(BONUS_NAME)...${NC}"
+					@$(CC) $(CFLAGS) $(INC) $(BONUS_OBJS) $(LIBFT) -o $(BONUS_NAME)
 
 $(OBJ_DIR)%.o:		$(SRC_DIR)%.c 
 					@mkdir -p $(@D)
+					@echo "${BLUE}🛠️  Compiling $<...${NC}"
 					@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
+					@echo "${RED}🧹 Cleaning object files...${NC}"
 					@$(RM) -r $(OBJ_DIR)
 					@make clean -C ./my_library
-					@make clean -C src_bonus
 
 fclean: 			clean
-					@$(RM) $(NAME)
+					@echo "${RED}🔥 Removing binaries...${NC}"
+					@$(RM) $(NAME) $(BONUS_NAME)
 					@$(RM) $(LIBFT)
-					@make fclean -C src_bonus
 
 re: 				fclean all
 
-bonus:
-					@make -C src_bonus
-					@make clean -C src_bonus
+bonus: 				$(BONUS_NAME)
 
-rebonus:				
-					@make re -C src_bonus
-
-.PHONY: 			start all clean fclean re bonus rebonus
+.PHONY: 			start all clean fclean re bonus

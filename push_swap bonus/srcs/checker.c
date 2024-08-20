@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 10:09:13 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/02/05 18:08:07 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/08/20 14:59:49 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "../inc/push_swap.h"
 
 void	free_checker(t_stack_node **a, t_stack_node **b, char **line)
 {

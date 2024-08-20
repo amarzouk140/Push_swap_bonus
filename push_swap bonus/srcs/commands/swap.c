@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:04:29 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/01/08 08:29:17 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/08/20 14:58:16 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-static void	swap(t_stack_node **head)
+void	swap(t_stack_node **head)
 {
 	if (!*head || !(*head)->next)
 		return ;

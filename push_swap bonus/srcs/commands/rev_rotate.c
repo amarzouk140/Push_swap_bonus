@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 00:02:12 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/01/08 08:27:23 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/08/20 14:57:55 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-static void	rev_rotate(t_stack_node **stack)
+void	rev_rotate(t_stack_node **stack)
 {
 	t_stack_node	*last;
 
